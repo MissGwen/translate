@@ -183,4 +183,9 @@ export default {
   yor: "yo",
   zha: "za",
   zul: "zu",
+
+  // Codes that Libretranslate accepts but that are not part of the ISO 639-1:
+  // "pb" is Brazilian Portuguese and "zt" is Traditional Chinese
+  pb: "pb",
+  zt: "zt",
 };

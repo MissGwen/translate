@@ -23,6 +23,12 @@ describe("language parsing", () => {
     expect(languages("SPANISH")).toBe("es");
   });
 
+  it("works with the extra Libretranslate codes", () => {
+    expect(languages("zt")).toBe("zt");
+    expect(languages("pb")).toBe("pb");
+    expect(languages("ZT")).toBe("zt");
+  });
+
   it("throws with an invalid language name type", () => {
     expect(() => languages(20)).toThrow();
   });

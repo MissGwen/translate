@@ -16,6 +16,12 @@ describe("Libre mocked requests", () => {
     expect(text).toMatch(/Hola mundo/i);
   });
 
+  it("accepts the Libretranslate-only language codes", async () => {
+    mock.libre("你好世界");
+    const text = await translate("Hello world", { to: "zt" });
+    expect(text).toBe("你好世界");
+  });
+
   it("will throw with a wrong language", async () => {
     const opts = { to: "adgdfnj" };
     await expect(translate("Hello world", opts)).rejects.toMatchObject({
