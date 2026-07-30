@@ -50,14 +50,14 @@ describe("translate.js", () => {
   });
 
   it("does not accept other keys", async () => {
-    await expect(() =>
+    await expect(
       translate("hello", { to: "es", blabla: "blu" })
     ).rejects.toThrow("Invalid option with the name 'blabla'");
   });
 
   it("requires the key", async () => {
     const yandex = translate.Translate({ engine: "yandex", key: false });
-    await expect(() => yandex("hello", "es")).rejects.toThrow(
+    await expect(yandex("hello", "es")).rejects.toThrow(
       'The engine "yandex" needs a key, please provide it'
     );
   });
@@ -85,7 +85,7 @@ describe("Independent", () => {
       from: "en",
       to: "ja",
     };
-    await expect(() => translate("hello", options)).rejects.toThrow(
+    await expect(translate("hello", options)).rejects.toThrow(
       "Invalid option with the name 'id'"
     );
   });
